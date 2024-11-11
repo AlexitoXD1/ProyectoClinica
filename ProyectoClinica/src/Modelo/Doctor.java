@@ -4,6 +4,7 @@ public class Doctor {
     private String Dnom; //Nombre
     private String Dapel; //Apellido
     private String Desp; //Especialidad
+    private String Dtel; //Telefono
     
     public Doctor(){}
     public Object[] DRegistro(int num){
@@ -26,5 +27,9 @@ public class Doctor {
     public String getDesp() {
         return Desp;    }
     public void setDesp(String Desp) {
-        this.Desp = Desp;    }    
+        this.Desp = Desp;    }
+    public String getDtel() {
+        return Dtel;    }
+    public void setDtel(String Dtel) {
+        this.Dtel = Dtel;    }    
 }
