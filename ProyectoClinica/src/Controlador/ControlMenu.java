@@ -7,7 +7,7 @@ package Controlador;
 import Colecciones.ArregloUsuarios;
 import Persistencia.AlmacenarUsuarios;
 import Vista.Buscar;
-import Vista.Doctor;
+import Vista.VistaDoctor;
 import Vista.Especialidad;
 import Vista.Menu;
 import Vista.Paciente;
@@ -51,7 +51,7 @@ public class ControlMenu implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == men.btnDoctor) {
-            Doctor doc = new Doctor();
+            VistaDoctor doc = new VistaDoctor();
             MostrarFrame(doc);
         }
         if (e.getSource() == men.btnHome) {
