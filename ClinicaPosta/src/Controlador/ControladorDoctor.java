@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class ControladorV4 implements ActionListener {
+public class ControladorDoctor implements ActionListener {
 
     VentanaDoctor vista;
     PilaDoctor Pila;
 
-    public ControladorV4(VentanaDoctor vem) {
+    public ControladorDoctor(VentanaDoctor vem) {
         vista = vem;
 
         vista.btnAgregar.addActionListener(this);

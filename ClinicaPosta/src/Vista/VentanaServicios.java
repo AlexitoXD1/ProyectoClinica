@@ -1,14 +1,14 @@
 package Vista;
 
-import Controlador.ControladorV5;
+import Controlador.ControladorServicios;
 
 public class VentanaServicios extends javax.swing.JInternalFrame {
 
-    ControladorV5 controlador;
+    ControladorServicios controlador;
 
     public VentanaServicios() {
         initComponents();
-        controlador = new ControladorV5(this);
+        controlador = new ControladorServicios(this);
         controlador.init();
     }
 

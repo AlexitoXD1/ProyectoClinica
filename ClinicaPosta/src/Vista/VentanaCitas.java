@@ -1,14 +1,14 @@
 package Vista;
 
-import Controlador.ControladorV2;
+import Controlador.ControladorCitas;
 
 public class VentanaCitas extends javax.swing.JInternalFrame {
 
-    ControladorV2 controlador;
+    ControladorCitas controlador;
 
     public VentanaCitas() {
         initComponents();
-        controlador = new ControladorV2(this);
+        controlador = new ControladorCitas(this);
         controlador.init();
     }
 

@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
-public class ControladorV1 implements ActionListener {
+public class ControladorDatosPaciente implements ActionListener {
 
     VentanaRegistroPaciente vista;
     ArregloPaciente Lista;
     Paciente paciente;
 
-    public ControladorV1(VentanaRegistroPaciente vr) {
+    public ControladorDatosPaciente(VentanaRegistroPaciente vr) {
         vista = vr;
         //Cada componente se registra como un Action Listener
         vista.txtIdPaciente.addActionListener(this);

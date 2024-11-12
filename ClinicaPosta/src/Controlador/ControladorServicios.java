@@ -9,13 +9,13 @@ import Vista.VentanaServicios;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class ControladorV5 {
+public class ControladorServicios {
 
     VentanaServicios c;
     DataServicio data;
     int filaSeleccionada = -1;
 
-    public ControladorV5(VentanaServicios c) {
+    public ControladorServicios(VentanaServicios c) {
         this.c = c;
     }
 
@@ -47,7 +47,7 @@ public class ControladorV5 {
 
     private void rellenarComboIDMascota() {
         c.cbxPaciente.removeAllItems();
-        for (Paciente mas : ControladorV1.listaPacientes()) {
+        for (Paciente mas : ControladorDatosPaciente.listaPacientes()) {
             c.cbxPaciente.addItem(mas.getCodigo());
         }
     }

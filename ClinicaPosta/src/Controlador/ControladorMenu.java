@@ -30,7 +30,7 @@ public class ControladorMenu implements ActionListener {
         if (e.getSource() == vista.opcion01) {
             //ActionEvent que ejecuta la opcion01 abre (VentanaRegistro)
             VentanaRegistroPaciente vr = new VentanaRegistroPaciente();
-            ControladorV1 cv1 = new ControladorV1(vr);
+            ControladorDatosPaciente cv1 = new ControladorDatosPaciente(vr);
             vr.setTitle("Registro de Datos Paciente"); //-- Titulo de Ventana
             PresentarMenu.Centrar(vr, vista.dpnEscritorio);
         }
@@ -47,7 +47,7 @@ public class ControladorMenu implements ActionListener {
         if (e.getSource() == vista.opcion03) {
 
             VentanaEspecialidad vcl = new VentanaEspecialidad();
-            ControladorV3 cv3 = new ControladorV3(vcl);
+            ControladorEspecialidad cv3 = new ControladorEspecialidad(vcl);
             vcl.setTitle("Registro de Especialidad");
             PresentarMenu.Centrar(vcl, vista.dpnEscritorio);
         }
@@ -55,7 +55,7 @@ public class ControladorMenu implements ActionListener {
         if (e.getSource() == vista.opcion04) {
             //ActionEvent que ejecuta la opcion04 abre (VentanaDoctor)
             VentanaDoctor vem = new VentanaDoctor();
-            ControladorV4 cv4 = new ControladorV4(vem);
+            ControladorDoctor cv4 = new ControladorDoctor(vem);
             vem.setTitle("Registro de Doctor");
             PresentarMenu.Centrar(vem, vista.dpnEscritorio);
         }
