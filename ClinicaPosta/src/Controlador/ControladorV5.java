@@ -79,7 +79,7 @@ public class ControladorV5 {
                 JOptionPane.showMessageDialog(null, "Rellenar todos los datos", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "No hay mascotas registradas", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No hay pacientes registrados", "Error", JOptionPane.ERROR_MESSAGE);
         } catch (java.lang.NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Ingresar un numero valido", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -107,7 +107,7 @@ public class ControladorV5 {
                     JOptionPane.showMessageDialog(null, "Rellenar todos los datos", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (NullPointerException e) {
-                JOptionPane.showMessageDialog(null, "No hay mascotas registradas", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "No hay pacientes registrados", "Error", JOptionPane.ERROR_MESSAGE);
             } catch (java.lang.NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Ingresar un numero valido", "Error", JOptionPane.ERROR_MESSAGE);
             }

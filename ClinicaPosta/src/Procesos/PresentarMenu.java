@@ -21,7 +21,7 @@ public class PresentarMenu {
         // Asignar un ícono al frame
         ImageIcon icon = new ImageIcon("/_Icons/logotipo.png"); // Asegúrate de que la ruta sea correcta
         JFrame parentWindow = (JFrame) javax.swing.SwingUtilities.windowForComponent(escritorio);
-        parentWindow.setTitle("POSTA MEDICA - " + frame.getTitle());
+        parentWindow.setTitle("POSTA CLINICA - " + frame.getTitle());
         frame.setFrameIcon(icon);
         frame.show();
         escritorio.repaint();

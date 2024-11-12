@@ -55,7 +55,7 @@ public class ControladorV4 implements ActionListener {
         }
         if (e.getSource() == vista.btnBuscar) {
             String codbuscado = Mensajes.LeerTexto("Ingrese el "
-                    + "codigo del Doctor a buscar");
+                    + "Codigo del Doctor a buscar");
             Pila.BuscarPorCodigo(codbuscado);
         }
     }//fin action 

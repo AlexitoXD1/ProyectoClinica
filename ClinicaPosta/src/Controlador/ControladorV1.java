@@ -174,10 +174,10 @@ public class ControladorV1 implements ActionListener {
         ArregloPaciente arregloMas = new ArregloPaciente();
         arregloMas.RecuperarDeArchivo();
         Paciente listaPaci[] = arregloMas.getLista();
-        Paciente[] mascotasFiltradas = Arrays.stream(listaPaci)
+        Paciente[] listaPac = Arrays.stream(listaPaci)
                 .filter(Pat -> Pat != null)
                 .toArray(Paciente[]::new);
-        return mascotasFiltradas;
+        return listaPac;
     }
 
 }
