@@ -203,7 +203,7 @@ if (e.getSource() == vista.btnEditar) {
 
         // Guardar cambios y actualizar la tabla
         Lista.GuardarEnArchivo(); // Guarda la lista actualizada
-        ProcesosVentana01.MostrarEnTabla(vista, Lista.getLista()); // Muestra los datos actualizados en la tabla
+        ProcesosVentanaPaciente.MostrarEnTabla(vista, Lista.getLista()); // Muestra los datos actualizados en la tabla
     } else {
         JOptionPane.showMessageDialog(null, "Selecciona un paciente de la tabla para editar", "Error", JOptionPane.ERROR_MESSAGE);
     }

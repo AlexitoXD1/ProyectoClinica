@@ -4,11 +4,8 @@ import Vista.*;
 import Pila.*;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author FAMILIA
- */
-public class ProcesosV4 {
+
+public class ProcesosVentanaDoctor {
 
     public static Doctor LeerDoctor(VentanaDoctor vem) {
         String cod = vem.txtCodigoEmp.getText();
