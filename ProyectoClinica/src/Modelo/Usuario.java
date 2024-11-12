@@ -1,50 +1,33 @@
 package Modelo;
+
 import java.io.Serializable;
+
 public class Usuario implements Serializable {
-    private String nom;
-    private String contra;
-    private String corre;
-    private String tel;
-    public Usuario(){}
-    public Object[] Registro(int num){
-        Object[] fila={num,contra,nom,corre,tel};
-        return fila;
+
+    private static final long serialVersionUID = 1L;
+
+    private String usuario;
+    private String password;
+
+    public Usuario(String usuario, String password) {
+        this.usuario = usuario;
+        this.password = password;
     }
 
-    public String getNom() {
-        return nom;
+    public String getPassword() {
+        return password;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getContra() {
-        return contra;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setContra(String contra) {
-        this.contra = contra;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
-    public String getCorre() {
-        return corre;
-    }
-
-    public void setCorre(String corre) {
-        this.corre = corre;
-    }
-
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
-
-    
-
-    
-    
 }
