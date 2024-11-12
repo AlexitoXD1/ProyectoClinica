@@ -15,14 +15,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.JTable;
 
-public class ControladorV2 {
+public class ControladorCitas {
 
     VentanaCitas c;
     DefaultTableModel modelo;
     int filaSeleccionada = -1;
     DataCita dataCita;
 
-    public ControladorV2(VentanaCitas c) {
+    public ControladorCitas(VentanaCitas c) {
         this.c = c;
     }
 
@@ -89,7 +89,7 @@ public class ControladorV2 {
     private void rellenarComboIDPaciente() {
         try {
             c.cbxIdPaciente.removeAllItems();
-            for (Paciente mas : ControladorV1.listaPacientes()) {
+            for (Paciente mas : ControladorDatosPaciente.listaPacientes()) {
                 c.cbxIdPaciente.addItem(mas.getCodigo());
             }
         } catch (Exception e) {
@@ -107,7 +107,7 @@ public class ControladorV2 {
                 listaServiciosEncontrador = serviciosEncontrador();
                 Servicio serTemp = listaServiciosEncontrador.get(idPosicionServicio);
                 c.comboIdDoctor.removeAllItems();
-                for (Doctor emp : ControladorV4.listaDoctores("doctor")) {
+                for (Doctor emp : ControladorDoctor.listaDoctores("doctor")) {
                     String areaTemp = serTemp.getArea();
                     if (areaTemp.equals(emp.getArea())) {
                         c.comboIdDoctor.addItem(emp.getNombre());
@@ -125,7 +125,7 @@ public class ControladorV2 {
         c.cbxIdPaciente.addActionListener((java.awt.event.ActionEvent evt) -> {
             try {               
                 String idPaciente = (String) c.cbxIdPaciente.getSelectedItem();                
-                for (Paciente mas : ControladorV1.listaPacientes()) {                    
+                for (Paciente mas : ControladorDatosPaciente.listaPacientes()) {                    
                     String idEspecialidad = mas.getCodigo();
                     //Una vez teniendo el´código de la Especialidad
                     //posteriormente comparamos el id del Paciente seleccionada

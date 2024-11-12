@@ -9,13 +9,13 @@ import Persistencia.*;
 import javax.swing.JOptionPane;
 import Ordenamientos.OrdenarListaEnlazada;
 
-public class ControladorV3 implements ActionListener {//controlador ventana cliente
+public class ControladorEspecialidad implements ActionListener {//controlador ventana cliente
 
     ListaEnlazada Lista;
     VentanaEspecialidad vista;
     Nodo actual;
 
-    public ControladorV3(VentanaEspecialidad vcl) {
+    public ControladorEspecialidad(VentanaEspecialidad vcl) {
         vista = vcl;
         vista.btnGuardarIni.addActionListener(this);
         vista.btnGuardarFin.addActionListener(this);

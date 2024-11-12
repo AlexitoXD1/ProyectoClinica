@@ -8,17 +8,17 @@ public class Cita implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String codigoCita;
-    private String idMascota;
-    private String idPropietario;
+    private String idPaciente;
+    private String idEspecialidad;
     private String nombreDoctor;
     private String servicio;
     private Timestamp fecha;
     private int estado;
 
-    public Cita(String codigoCita, String idMascota, String idPropietario, String nombreDoctor, String servicio, Timestamp fecha, int estado) {
+    public Cita(String codigoCita, String idPaciente, String idEspecialidad, String nombreDoctor, String servicio, Timestamp fecha, int estado) {
         this.codigoCita = codigoCita;
-        this.idMascota = idMascota;
-        this.idPropietario = idPropietario;
+        this.idPaciente = idPaciente;
+        this.idEspecialidad = idEspecialidad;
         this.nombreDoctor = nombreDoctor;
         this.servicio = servicio;
         this.fecha = fecha;
@@ -33,20 +33,20 @@ public class Cita implements Serializable {
         this.codigoCita = codigoCita;
     }
 
-    public String getIdMascota() {
-        return idMascota;
+    public String getIdPaciente() {
+        return idPaciente;
     }
 
-    public void setIdMascota(String idMascota) {
-        this.idMascota = idMascota;
+    public void setIdPaciente(String idPaciente) {
+        this.idPaciente = idPaciente;
     }
 
-    public String getIdPropietario() {
-        return idPropietario;
+    public String getIdEspecialidad() {
+        return idEspecialidad;
     }
 
-    public void setIdPropietario(String idPropietario) {
-        this.idPropietario = idPropietario;
+    public void setIdEspecialidad(String idEspecialidad) {
+        this.idEspecialidad = idEspecialidad;
     }
 
     public String getNombreDoctor() {

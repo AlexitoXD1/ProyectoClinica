@@ -9,13 +9,13 @@ import Vista.VentanaServicios;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class ControladorV5 {
+public class ControladorServicios {
 
     VentanaServicios c;
     DataServicio data;
     int filaSeleccionada = -1;
 
-    public ControladorV5(VentanaServicios c) {
+    public ControladorServicios(VentanaServicios c) {
         this.c = c;
     }
 
@@ -31,7 +31,7 @@ public class ControladorV5 {
         c.txtPrecio.setText("");
         c.cbxarea.setSelectedIndex(0);
         consultar();
-        rellenarComboIDMascota();
+        rellenarComboIDPaciente();
         //DESABILITAR
         cambiarEstado(false);
         c.btnEditar.setEnabled(false);
@@ -45,9 +45,9 @@ public class ControladorV5 {
                 c.txtDesc, c.txtIdservicio, c.txtNomServicio, c.txtPrecio, c.cbxPaciente, c.cbxarea, c.btnAgregar);
     }
 
-    private void rellenarComboIDMascota() {
+    private void rellenarComboIDPaciente() {
         c.cbxPaciente.removeAllItems();
-        for (Paciente mas : ControladorV1.listaPacientes()) {
+        for (Paciente mas : ControladorDatosPaciente.listaPacientes()) {
             c.cbxPaciente.addItem(mas.getCodigo());
         }
     }
@@ -92,15 +92,15 @@ public class ControladorV5 {
     public void btnEditar() {
         if (filaSeleccionada > -1) {
             try {
-                String idMascota = c.cbxPaciente.getSelectedItem().toString();
+                String idPaciente = c.cbxPaciente.getSelectedItem().toString();
                 String idServicio = c.tblServicio.getValueAt(filaSeleccionada, 1).toString();
                 String nombreServicio = c.txtNomServicio.getText();
                 String descripcion = c.txtDesc.getText();
                 double precio = Double.parseDouble(c.txtPrecio.getText());
                 String area = c.cbxarea.getSelectedItem().toString();
-                boolean inputValido = ProcesosServicio.inputValido(idMascota, idServicio, nombreServicio, precio, descripcion, area);
+                boolean inputValido = ProcesosServicio.inputValido(idPaciente, idServicio, nombreServicio, precio, descripcion, area);
                 if (inputValido) {
-                    Servicio ser = new Servicio(idMascota, idServicio, nombreServicio, precio, area, descripcion);
+                    Servicio ser = new Servicio(idPaciente, idServicio, nombreServicio, precio, area, descripcion);
                     data.editar(ser);
                     limpiar();
                 } else {
@@ -127,8 +127,8 @@ public class ControladorV5 {
     }
 
     public void btnBuscar() {
-        String codMascota = c.bscCodigo.getText();
-        ProcesosServicio.buscarEnColumna(c.tblServicio, 0, codMascota);
+        String codPaciente = c.bscCodigo.getText();
+        ProcesosServicio.buscarEnColumna(c.tblServicio, 0, codPaciente);
     }
 
     public void btnordenar() {
@@ -138,13 +138,13 @@ public class ControladorV5 {
 
     public void clickTabla() {
         filaSeleccionada = c.tblServicio.getSelectedRow();
-        String idMascota = c.tblServicio.getValueAt(filaSeleccionada, 0).toString();
+        String idPaciente = c.tblServicio.getValueAt(filaSeleccionada, 0).toString();
         String idServicio = c.tblServicio.getValueAt(filaSeleccionada, 1).toString();
         String nombreServicio = c.tblServicio.getValueAt(filaSeleccionada, 2).toString();
         String precio = c.tblServicio.getValueAt(filaSeleccionada, 3).toString();
         String areaEncargada = c.tblServicio.getValueAt(filaSeleccionada, 4).toString();
         String descripcion = c.tblServicio.getValueAt(filaSeleccionada, 5).toString();
-        c.cbxPaciente.setSelectedItem(idMascota);
+        c.cbxPaciente.setSelectedItem(idPaciente);
         c.txtIdservicio.setText(idServicio);
         c.txtNomServicio.setText(nombreServicio);
         c.txtDesc.setText(descripcion);

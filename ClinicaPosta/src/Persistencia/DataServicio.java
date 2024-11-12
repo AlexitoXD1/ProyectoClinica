@@ -25,7 +25,7 @@ public class DataServicio {
 
     // Método para editar un servicio existente
     public void editar(Servicio servicio) {
-        NodoServicio nodo = arbolServicio.buscarServicio(servicio.getIdServicio());
+        NodoServicio nodo = arbolServicio.buscarServicio(servicio.getIdEspecialidad());
         if (nodo != null) {
             nodo.setElemento(servicio);
             guardarDatos();
@@ -76,39 +76,4 @@ public class DataServicio {
         }
     }
 
-//    public static void main(String[] args) {
-//        DataServicio dataServicio = new DataServicio();
-//
-//        // Agregar servicios
-//        Servicio servicio1 = new Servicio("1", "S004", "Corte de pelo", 30.0, "Peluquería", "Corte y aseo");
-//        Servicio servicio2 = new Servicio("2", "S004", "Vacunación", 50.0, "Veterinaria", "Vacunación completa");
-//
-//        dataServicio.agregar(servicio1);
-//        dataServicio.agregar(servicio2);
-//
-//        // Consultar servicios
-//        System.out.println("Lista de servicios:");
-//        for (Servicio servicio : dataServicio.consultar()) {
-//            System.out.println(servicio.getIdServicio() + " - " + servicio.getNomServicio() + " - " + servicio.getPrecio() + " - " + servicio.getIdPaciente());
-//        }
-//
-//        // Editar un servicio
-//        Servicio servicioEditado = new Servicio("2", "S002", "Vacunación", 60.0, "Veterinaria", "Vacunación completa con refuerzo");
-//        dataServicio.editar(servicioEditado);
-//
-//        // Consultar servicios después de la edición
-//        System.out.println("Lista de servicios después de la edición:");
-//        for (Servicio servicio : dataServicio.consultar()) {
-//            System.out.println(servicio.getIdServicio() + " - " + servicio.getNomServicio() + " - " + servicio.getPrecio() + " - " + servicio.getIdPaciente());
-//        }
-//
-//        // Eliminar un servicio
-//        dataServicio.eliminar("S001");
-//
-//        // Consultar servicios después de la eliminación
-//        System.out.println("Lista de servicios después de la eliminación:");
-//        for (Servicio servicio : dataServicio.consultar()) {
-//            System.out.println(servicio.getIdServicio() + " - " + servicio.getNomServicio() + " - " + servicio.getPrecio() + " - " + servicio.getIdPaciente());
-//        }
-//    }
 }

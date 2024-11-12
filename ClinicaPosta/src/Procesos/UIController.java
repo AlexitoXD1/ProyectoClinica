@@ -42,7 +42,6 @@ public class UIController {
             public void focusLost(FocusEvent e) {
                 if (textField.getText().isEmpty()) {
                     textField.setForeground(Color.GRAY);
-//                    textField.setForeground(new Color(255, 255, 255, 161));
                     textField.setText(placeholder);
                 }
             }
