@@ -57,6 +57,15 @@ public class ArregloPaciente implements Serializable {
         // Asignar el nuevo array a la referencia de Lista
         Lista = tempL;
     }
+    public Paciente buscarPaciente(String idPaciente) {
+    for (Paciente paciente : getLista()) { // Supongo que getLista() devuelve el arreglo de pacientes
+        if (paciente != null && paciente.getCodigo().equals(idPaciente)) {
+            return paciente;
+        }
+    }
+    return null; // Retorna null si no encuentra el paciente
+}
+
 
     //Crear Archivo Binario con los datos
     public void GuardarEnArchivo() {

@@ -32,6 +32,7 @@ public class ControladorV1 implements ActionListener {
         vista.btnGuardar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
         vista.btnOrdenar.addActionListener(this);
+        vista.btnEditar.addActionListener(this);
         mostrarNumPacientes();
         Lista = new ArregloPaciente();
         Lista.RecuperarDeArchivo(); //-- Recuperar Archivo Binario 
@@ -168,6 +169,46 @@ public class ControladorV1 implements ActionListener {
                     ProcesosVentana01.MostrarEnTabla(vista, listaordenada);
                     ProcesosVentana01.MostrarResumen(vista, listaordenada);
         }
+        //ACCION BOTON EDITAR
+        // Acción del botón Editar
+if (e.getSource() == vista.btnEditar) {
+    if (filaSeleccionada >= 0) {
+        // Obtener el ID del paciente desde la tabla
+        String idPaciente = vista.tblDatos.getValueAt(filaSeleccionada, 1).toString();
+        
+        // Obtener el paciente actual usando el ID
+        Paciente pacienteAEditar = Lista.buscarPaciente(idPaciente);
+        if (pacienteAEditar == null) {
+            JOptionPane.showMessageDialog(null, "Paciente no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Solicitar los nuevos datos mediante JOptionPane
+        String nuevoNombre = JOptionPane.showInputDialog(null, "Editar Nombre:", pacienteAEditar.getNombre());
+        String nuevoGenero = JOptionPane.showInputDialog(null, "Editar Género:", pacienteAEditar.getGenero());
+        String nuevaEdadStr = JOptionPane.showInputDialog(null, "Editar Edad:", pacienteAEditar.getEdad());
+
+        // Validar los datos ingresados (ejemplo para la edad)
+        int nuevaEdad = pacienteAEditar.getEdad();
+        try {
+            nuevaEdad = Integer.parseInt(nuevaEdadStr);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Edad no válida. No se realizarán cambios en la edad.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+
+        // Actualizar los datos del paciente
+        pacienteAEditar.setNombre(nuevoNombre);
+        pacienteAEditar.setGenero(nuevoGenero);
+        pacienteAEditar.setEdad(nuevaEdad);
+
+        // Guardar cambios y actualizar la tabla
+        Lista.GuardarEnArchivo(); // Guarda la lista actualizada
+        ProcesosVentana01.MostrarEnTabla(vista, Lista.getLista()); // Muestra los datos actualizados en la tabla
+    } else {
+        JOptionPane.showMessageDialog(null, "Selecciona un paciente de la tabla para editar", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
+
     }
 
     public static Paciente[] listaPacientes() {
