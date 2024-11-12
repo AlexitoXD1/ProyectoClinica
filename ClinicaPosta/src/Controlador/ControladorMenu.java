@@ -38,7 +38,7 @@ public class ControladorMenu implements ActionListener {
         if (e.getSource() == vista.opcion02) {
             //ActionEvent que ejecuta la opcion02 abre (VentanaCitas)
             VentanaCitas vc = new VentanaCitas();
-//           ControladorV2 cv2 =  new ControladorV2(vc); 
+
             vc.setTitle("Registro de Cita"); //-- Titulo de Ventana
             PresentarMenu.Centrar(vc, vista.dpnEscritorio);
         }

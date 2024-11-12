@@ -22,7 +22,7 @@ public class ArbolServicio implements Serializable {
             NodoServicio nuevo = new NodoServicio(elemento);
             return nuevo;
         } else {//en el caso que no este vacío.
-            if (elemento.getIdServicio().compareTo(Nodo.getElemento().getIdServicio()) > 0) {
+            if (elemento.getIdEspecialidad().compareTo(Nodo.getElemento().getIdEspecialidad()) > 0) {
                 Nodo.setDer(agregarServicio(Nodo.getDer(), elemento));
             } else {
                 Nodo.setIzq(agregarServicio(Nodo.getIzq(), elemento));
@@ -44,10 +44,10 @@ public class ArbolServicio implements Serializable {
     public NodoServicio buscarServicio(String idServicio) {
         NodoServicio auxiliar = Raiz;
         while (auxiliar != null) {
-            if (auxiliar.getElemento().getIdServicio().equals(idServicio)) {
+            if (auxiliar.getElemento().getIdEspecialidad().equals(idServicio)) {
                 return auxiliar;
             } else {
-                if (idServicio.compareToIgnoreCase(auxiliar.getElemento().getIdServicio()) > 0) {
+                if (idServicio.compareToIgnoreCase(auxiliar.getElemento().getIdEspecialidad()) > 0) {
                     auxiliar = auxiliar.getDer();
                 } else {
                     auxiliar = auxiliar.getIzq();
@@ -91,9 +91,9 @@ public class ArbolServicio implements Serializable {
         if (auxiliar == null) {
             return null;
         }
-        if (idServicio.compareTo(auxiliar.getElemento().getIdServicio()) < 0) {
+        if (idServicio.compareTo(auxiliar.getElemento().getIdEspecialidad()) < 0) {
             auxiliar.setIzq(eliminar(auxiliar.getIzq(), idServicio));
-        } else if (idServicio.compareTo(auxiliar.getElemento().getIdServicio()) > 0) {
+        } else if (idServicio.compareTo(auxiliar.getElemento().getIdEspecialidad()) > 0) {
             auxiliar.setDer(eliminar(auxiliar.getDer(), idServicio));
         } else {
             if (auxiliar.getIzq() != null && auxiliar.getDer() != null) {

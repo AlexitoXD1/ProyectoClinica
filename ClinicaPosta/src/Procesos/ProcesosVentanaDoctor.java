@@ -4,11 +4,8 @@ import Vista.*;
 import Pila.*;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author FAMILIA
- */
-public class ProcesosV4 {
+
+public class ProcesosVentanaDoctor {
 
     public static Doctor LeerDoctor(VentanaDoctor vem) {
         String cod = vem.txtCodigoEmp.getText();
@@ -30,8 +27,6 @@ public class ProcesosV4 {
         vem.cbxCondicion.removeAllItems();
         vem.cbxCondicion.addItem("DOCTOR");
         vem.cbxCondicion.addItem("ASISTENTE");
-        vem.cbxCondicion.addItem("SECRETARIO/A");
-        vem.cbxCondicion.addItem("LIMPIEZA");
     }
 
     public static void MostrarDatosEnTabla(VentanaDoctor vem, PilaDoctor lista) {

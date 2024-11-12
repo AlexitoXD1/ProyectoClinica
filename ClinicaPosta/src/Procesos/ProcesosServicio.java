@@ -13,7 +13,7 @@ public class ProcesosServicio {
         try {
             int idActual = 0;
             for (Servicio servicio : new Persistencia.DataServicio().consultar()) {
-                idActual = Integer.parseInt(servicio.getIdServicio());
+                idActual = Integer.parseInt(servicio.getIdEspecialidad());
             }
             return idActual;
         } catch (NumberFormatException e) {
@@ -52,7 +52,7 @@ public class ProcesosServicio {
         Object datos[] = new Object[6];
         for (Servicio se : data.consultar()) {
             datos[0] = se.getIdPaciente();
-            datos[1] = se.getIdServicio();
+            datos[1] = se.getIdEspecialidad();
             datos[2] = se.getNomServicio();
             datos[3] = se.getPrecio();
             datos[4] = se.getArea();

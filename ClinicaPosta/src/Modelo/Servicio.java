@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class Servicio implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private String idMascota;
-    private String IdServicio;
+    private String idPaciente;
+    private String IdEspecialidad;
     private String nomServicio;
     private double precio;
     private String area;
@@ -15,9 +15,9 @@ public class Servicio implements Serializable {
     public Servicio() {
     }
 
-    public Servicio(String idMascota, String IdServicio, String nomServicio, double precio, String area, String descripcion) {
-        this.idMascota = idMascota;
-        this.IdServicio = IdServicio;
+    public Servicio(String idPaciente, String IdEspecialidad, String nomServicio, double precio, String area, String descripcion) {
+        this.idPaciente = idPaciente;
+        this.IdEspecialidad = IdEspecialidad;
         this.nomServicio = nomServicio;
         this.precio = precio;
         this.area = area;
@@ -25,12 +25,12 @@ public class Servicio implements Serializable {
     }
 
     public String ServicioCompleto() {
-        return IdServicio + " " + nomServicio;
+        return IdEspecialidad + " " + nomServicio;
     }
 
     public Servicio(Object[] registro) {
-        this.idMascota = registro[0].toString();
-        this.IdServicio = registro[1].toString();
+        this.idPaciente = registro[0].toString();
+        this.IdEspecialidad = registro[1].toString();
         this.nomServicio = registro[2].toString();
         this.precio = Double.parseDouble(registro[3].toString());
         this.area = registro[4].toString();
@@ -38,24 +38,24 @@ public class Servicio implements Serializable {
     }
 
     public Object[] getRegistro() {
-        Object[] fila = {idMascota, IdServicio, nomServicio, precio, area, descripcion};
+        Object[] fila = {idPaciente, IdEspecialidad, nomServicio, precio, area, descripcion};
         return fila;
     }
 
     public String getIdPaciente() {
-        return idMascota;
+        return idPaciente;
     }
 
-    public void setIdMascota(String idMascota) {
-        this.idMascota = idMascota;
+    public void setIdPaciente(String idPaciente) {
+        this.idPaciente = idPaciente;
     }
 
-    public String getIdServicio() {
-        return IdServicio;
+    public String getIdEspecialidad() {
+        return IdEspecialidad;
     }
 
-    public void setIdServicio(String IdServicio) {
-        this.IdServicio = IdServicio;
+    public void setIdEspecialidad(String IdEspecialidad) {
+        this.IdEspecialidad = IdEspecialidad;
     }
 
     public String getNomServicio() {

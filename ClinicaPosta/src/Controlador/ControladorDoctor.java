@@ -30,22 +30,22 @@ public class ControladorDoctor implements ActionListener {
         vista.btnBuscar.addActionListener(this);
         Pila = new PilaDoctor();
         Pila = DatosDoctor.RecuperaDeArchivo();
-        ProcesosV4.Presentacion(vista);
-        ProcesosV4.MostrarDatosEnTabla(vista, Pila);
+        ProcesosVentanaDoctor.Presentacion(vista);
+        ProcesosVentanaDoctor.MostrarDatosEnTabla(vista, Pila);
     }
 
     //Metodo para escuchar los eventos de los componentes de Ventana Registro Doctor
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnAgregar) {
-            Pila.Agregar(ProcesosV4.LeerDoctor(vista));
-            ProcesosV4.LimpiarEntradas(vista);
-            ProcesosV4.MostrarDatosEnTabla(vista, Pila);
+            Pila.Agregar(ProcesosVentanaDoctor.LeerDoctor(vista));
+            ProcesosVentanaDoctor.LimpiarEntradas(vista);
+            ProcesosVentanaDoctor.MostrarDatosEnTabla(vista, Pila);
         }
         if (e.getSource() == vista.btnRetirar) {
             Pila.Eliminar();
-            ProcesosV4.LimpiarEntradas(vista);
-            ProcesosV4.MostrarDatosEnTabla(vista, Pila);
+            ProcesosVentanaDoctor.LimpiarEntradas(vista);
+            ProcesosVentanaDoctor.MostrarDatosEnTabla(vista, Pila);
         }
         if (e.getSource() == vista.btnVerPrimero) {
             Pila.VerPrimerElemento();
@@ -80,7 +80,6 @@ public class ControladorDoctor implements ActionListener {
             String tempCargo = emp.getCargo();
             if (tempCargo.equalsIgnoreCase(condicion)) {
                 listaDoctores.add(emp);
-//                break;
             }
         }
         return listaDoctores;

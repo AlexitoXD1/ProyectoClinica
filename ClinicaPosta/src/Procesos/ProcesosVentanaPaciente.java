@@ -5,7 +5,7 @@ import Vista.VentanaRegistroPaciente;
 import javax.swing.table.DefaultTableModel;
 
 
-public class ProcesosVentana01 {
+public class ProcesosVentanaPaciente {
 
     // Metodo para Enviar los datos de los txtField a la tabla
     public static void MostrarEnTabla(VentanaRegistroPaciente f1, Paciente[] a) {

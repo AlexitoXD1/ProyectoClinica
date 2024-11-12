@@ -5,7 +5,7 @@ import Modelo.*;
 import Ordenamientos.OrdenarArreglosObjetos;
 import Persistencia.DatosEspecialidad;
 import Procesos.Busquedas;
-import Procesos.ProcesosVentana01;
+import Procesos.ProcesosVentanaPaciente;
 import Procesos.ProcesosVentanaEspecialidad;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,8 +36,8 @@ public class ControladorDatosPaciente implements ActionListener {
         Lista = new ArregloPaciente();
         Lista.RecuperarDeArchivo(); //-- Recuperar Archivo Binario 
         Lista.ActualizarCantidadPacientes(); //-- Actualizar cant 
-        ProcesosVentana01.MostrarEnTabla(vista, Lista.getLista()); //-- Mostar Datos en tabla
-        ProcesosVentana01.PresentarVentanaRegistroPaciente(vista); //--- Caracteristicas de la Ventana(titulo)
+        ProcesosVentanaPaciente.MostrarEnTabla(vista, Lista.getLista()); //-- Mostar Datos en tabla
+        ProcesosVentanaPaciente.PresentarVentanaRegistroPaciente(vista); //--- Caracteristicas de la Ventana(titulo)
         ListaEnlazada listaEnlazada = DatosEspecialidad.RecuperarDeArchivo();
         filaSeleccionada = -1;
     
@@ -105,7 +105,7 @@ public class ControladorDatosPaciente implements ActionListener {
             if (filaSeleccionada >= 0) {
                 String idEspecialidad = vista.tblDatos.getValueAt(filaSeleccionada, 1).toString();
                 Lista.EliminarPaciente(idEspecialidad);
-                ProcesosVentana01.MostrarEnTabla(vista, Lista.getLista()); //--- Muestra los datos en tabla
+                ProcesosVentanaPaciente.MostrarEnTabla(vista, Lista.getLista()); //--- Muestra los datos en tabla
                 Lista.GuardarEnArchivo();
                 Lista.GuardarEnArchivo();
                 mostrarNumPacientes();
@@ -122,13 +122,13 @@ public class ControladorDatosPaciente implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //GUARDAR
         if (e.getSource() == vista.btnGuardar) {
-            paciente = ProcesosVentana01.LeerPaciente(vista);
+            paciente = ProcesosVentanaPaciente.LeerPaciente(vista);
             Lista.AgregarPaciente(paciente);
             Lista.GuardarEnArchivo();
             Lista.RecuperarDeArchivo();
             mostrarNumPacientes();
-            ProcesosVentana01.MostrarEnTabla(vista, Lista.getLista()); //--- Muestra los datos en tabla
-            ProcesosVentana01.LimpiarEntradas(vista); //--- Limpia los campos de datos
+            ProcesosVentanaPaciente.MostrarEnTabla(vista, Lista.getLista()); //--- Muestra los datos en tabla
+            ProcesosVentanaPaciente.LimpiarEntradas(vista); //--- Limpia los campos de datos
         }
 
         //METODOS BUSCAR
@@ -165,8 +165,8 @@ public class ControladorDatosPaciente implements ActionListener {
             Paciente listaPaci[] = arregloMas.getLista();
             Paciente[] listaordenada = OrdenarArreglosObjetos.OrdernarPacientesPorCodigo(listaPaci);
             System.out.println("EEEOOO");
-                    ProcesosVentana01.MostrarEnTabla(vista, listaordenada);
-                    ProcesosVentana01.MostrarResumen(vista, listaordenada);
+                    ProcesosVentanaPaciente.MostrarEnTabla(vista, listaordenada);
+                    ProcesosVentanaPaciente.MostrarResumen(vista, listaordenada);
         }
     }
 

@@ -4,10 +4,7 @@
  */
 package Vista;
 
-/**
- *
- * @author FAMILIA
- */
+
 public class VentanaEspecialidad extends javax.swing.JInternalFrame {
 
     /**

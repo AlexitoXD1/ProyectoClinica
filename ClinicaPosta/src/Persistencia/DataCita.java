@@ -44,8 +44,8 @@ public class DataCita {
         for (Cita cita : listaCitas) {
             modelo.addRow(new Object[]{
                 cita.getCodigoCita(),
-                cita.getIdMascota(),
-                cita.getIdPropietario(),
+                cita.getIdPaciente(),
+                cita.getIdEspecialidad(),
                 cita.getNombreDoctor(),
                 cita.getServicio(),
                 cita.getFecha(),
