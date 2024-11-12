@@ -33,7 +33,6 @@ public class VistaDoctor extends javax.swing.JPanel {
         txtDnom = new javax.swing.JTextField();
         cbxDesp = new javax.swing.JComboBox<>();
         txtDapel = new javax.swing.JTextField();
-        btnDnuevo = new javax.swing.JButton();
         btnDingresar = new javax.swing.JButton();
         btnDborrar = new javax.swing.JButton();
         btnDbuscar = new javax.swing.JButton();
@@ -46,7 +45,7 @@ public class VistaDoctor extends javax.swing.JPanel {
         jInternalFrame1.setVisible(true);
         jInternalFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(228, 127, 127));
 
         txtDcod.setBorder(javax.swing.BorderFactory.createTitledBorder("CODIGO"));
         txtDcod.addActionListener(new java.awt.event.ActionListener() {
@@ -64,8 +63,6 @@ public class VistaDoctor extends javax.swing.JPanel {
 
         txtDapel.setBorder(javax.swing.BorderFactory.createTitledBorder("APELLIDOS"));
 
-        btnDnuevo.setText("NUEVO");
-
         btnDingresar.setText("INGRESAR");
 
         btnDborrar.setText("BORRAR");
@@ -78,22 +75,21 @@ public class VistaDoctor extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDcod)
-                    .addComponent(txtDnom)
-                    .addComponent(txtDtel)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(txtDcod, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDnom, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDapel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxDesp, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDapel)
-                    .addComponent(btnDnuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDingresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDborrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDbuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(8, Short.MAX_VALUE))
+                    .addComponent(txtDtel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addComponent(txtDcod, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDnom, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -104,17 +100,15 @@ public class VistaDoctor extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDtel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnDnuevo)
+                .addComponent(btnDingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDingresar)
+                .addComponent(btnDborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDborrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDbuscar)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(btnDbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jInternalFrame1.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 450));
+        jInternalFrame1.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 450));
 
         tblDregistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,7 +123,7 @@ public class VistaDoctor extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblDregistro);
 
-        jInternalFrame1.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 490, 450));
+        jInternalFrame1.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 480, 450));
 
         add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 480));
     }// </editor-fold>//GEN-END:initComponents
@@ -143,7 +137,6 @@ public class VistaDoctor extends javax.swing.JPanel {
     public javax.swing.JButton btnDborrar;
     public javax.swing.JButton btnDbuscar;
     public javax.swing.JButton btnDingresar;
-    public javax.swing.JButton btnDnuevo;
     public javax.swing.JComboBox<String> cbxDesp;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JPanel jPanel2;

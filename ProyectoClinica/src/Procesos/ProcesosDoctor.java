@@ -1,4 +1,5 @@
 package Procesos;
+import Modelo.Doctor;
 import Vista.VistaDoctor;
 import javax.swing.table.DefaultTableModel;
 public class ProcesosDoctor {
@@ -19,11 +20,19 @@ public class ProcesosDoctor {
         Vdoc.txtDapel.setEnabled(Estado);
         Vdoc.cbxDesp.setEnabled(Estado);
         Vdoc.txtDtel.setEnabled(Estado);
-        Vdoc.btnDnuevo.setEnabled(Estado);
         Vdoc.btnDingresar.setEnabled(Estado);
         Vdoc.btnDborrar.setEnabled(Estado);
         Vdoc.btnDbuscar.setEnabled(Estado);
         Vdoc.tblDregistro.setEnabled(Estado);
+    }
+    public static Doctor LeerDatos(VistaDoctor Vdoc){
+        Doctor doc=new Doctor();
+        doc.setDcod(Vdoc.txtDcod.getText());
+        doc.setDnom(Vdoc.txtDnom.getText());
+        doc.setDapel(Vdoc.txtDapel.getText());
+        doc.setDesp(Vdoc.cbxDesp.getSelectedItem().toString());
+        doc.setDtel(Vdoc.txtDtel.getText());
+        return doc;
     }
     public static void LimpiarTabla(DefaultTableModel modtabla){
        modtabla.setRowCount(0);
