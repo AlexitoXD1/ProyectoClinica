@@ -34,35 +34,19 @@ public class Doctor implements Comparable<Doctor>, Serializable {
     }
 
     public String getCod() {
-        return cod;
-    }
-
+        return cod;    }
     public void setCod(String cod) {
-        this.cod = cod;
-    }
-
+        this.cod = cod;    }
     public String getNombre() {
-        return nombre;
-    }
-
+        return nombre;    }
     public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+        this.nombre = nombre;    }
     public String getCargo() {
-        return cargo;
-    }
-
+        return cargo;    }
     public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
+        this.cargo = cargo;    }
     public String getArea() {
-        return area;
-    }
-
+        return area;    }
     public void setArea(String area) {
-        this.area = area;
-    }
-
+        this.area = area;    }
 }
