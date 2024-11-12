@@ -31,7 +31,7 @@ public class ProcesosV4 {
         vem.cbxCondicion.addItem("DOCTOR");
         vem.cbxCondicion.addItem("ASISTENTE");
         vem.cbxCondicion.addItem("SECRETARIO/A");
-        vem.cbxCondicion.addItem("LIMPIEZA");
+        vem.cbxCondicion.addItem("INTERNO");
     }
 
     public static void MostrarDatosEnTabla(VentanaDoctor vem, PilaDoctor lista) {
